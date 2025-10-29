@@ -1,0 +1,28 @@
+[package]
+name = "ecs_inheritance_patterns"
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.90"
+authors = ["ShipsMerlin", "Jeferson Silva"]
+license = "MIT"
+description = "Modeling Fowler's Class Table Inheritance pattern in Rust using composition, enums, and ECS"
+repository = "https://github.com/marmota-alpina/ecs_inheritance_patterns"
+documentation = "https://github.com/marmota-alpina/ecs_inheritance_patterns"
+readme = "README.md"
+keywords = ["database", "patterns", "ecs", "education", "composition"]
+categories = ["database", "data-structures"]
+
+[dependencies]
+specs = "0.20"
+specs-derive = "0.4"
+uuid = { version = "1.11", features = ["v4", "fast-rng"] }
+
+[[bin]]
+name = "ecs_inheritance_patterns"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
